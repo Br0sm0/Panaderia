@@ -5,8 +5,10 @@
     --color-fondo: burlywood;
     --color-bordes: black;
     --color-hero: wheat;
+    --color-boton: rgb(230, 115, 34);
     --fuente-titulo: 'Playfair Display', serif;
     --fuente-normal: 'Lato', sans-serif;
+
 
 }
 body{
@@ -40,12 +42,20 @@ h1,h2,h3{
     background-color: var(--color-hero);
     padding-left: 40px;
 }
-a{
-    color:green;
+.hero a{
+    background-color:var(--color-boton);
+    color: white;
+    padding:10px 20px;
+    border:2px solid var(--color-bordes);
+    border-radius: 5px; 
+    position: relative;
+    box-shadow: 0px 10px 10px rgb(114, 58, 17);
+    transition: all 0.5s ease;
 }
-h2::before{
-    content:"* ";
-    color: red;
+.hero a:hover{
+    background-color:rgb(161, 81, 23);
+    top: 5px;
+    box-shadow: 2px 5px 25px rgb(114, 58, 17);
 }
 .productos{
     padding: 20px;
@@ -78,6 +88,21 @@ h2::before{
     top: -5px;
     box-shadow: 0px 10px 20px rgb(78, 167, 136);
 }
+.nosotros{
+    background-color:aqua;
+    color: black;
+    padding: 20px;
+    border: 2px solid var(--color-bordes);
+    border-radius: 10px;
+    margin-top: 20px;
+}
+.nosotros h2{
+    border-bottom: 2px solid var(--color-bordes);
+ }
+ .nosotros h2::after{
+    content:"👨‍💼 ";
+ }
+
 
 footer{
     margin-top: 20px;
