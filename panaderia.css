@@ -1,0 +1,110 @@
+:root{
+    --color-primario: aquamarine;
+    --color-tarjeta: coral;
+    --color-hover: crimson;
+    --color-fondo: burlywood;
+    --color-bordes: black;
+    --color-hero: wheat;
+    --fuente-titulo: 'Playfair Display', serif;
+    --fuente-normal: 'Lato', sans-serif;
+
+}
+body{
+    background-color: var(--color-fondo);
+    font-family: var(--fuente-normal);
+}
+
+h1,h2,h3{
+    font-family: var(--fuente-titulo);
+}
+ header{
+    background-color:var(--color-primario);
+    text-align: center;
+    padding: 20px;
+    border: 2px solid var(--color-bordes);
+    border-radius: 10px;
+ }
+ header h1::before{
+    content:"🍞"
+ }
+ header h1::after{
+    content:" 🍞"
+ }
+
+.hero{
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;     /* centra vertical */
+    align-items: flex-start;
+    background-color: var(--color-hero);
+    padding-left: 40px;
+}
+a{
+    color:green;
+}
+h2::before{
+    content:"* ";
+    color: red;
+}
+.productos{
+    padding: 20px;
+    border: 2px solid var(--color-bordes);
+    border-radius: 10px;
+    background-color:var(--color-primario);
+}
+.productos h2{
+    color:white;
+}
+.contenedor_producto{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: space-between;
+}
+.tarjeta{
+    background-color:var(--color-tarjeta);
+    text-align: center;
+    padding: 5px 30px;
+    border: 2px solid var(--color-bordes);
+    border-radius: 10px;
+    width: 30%;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0px 5px 10px rgb(78, 167, 136);
+}
+.tarjeta:hover{
+    background-color:var(--color-hover);
+    top: -5px;
+    box-shadow: 0px 10px 20px rgb(78, 167, 136);
+}
+
+footer{
+    margin-top: 20px;
+    border-top: 2px solid var(--color-bordes);
+    padding: 10px; 
+    
+}
+footer p{
+    color: black;
+    display: block;
+    width:fit-content;
+    box-shadow: 0px 5px 10px rgb(192, 159, 117);
+    border-radius:5px;
+}
+footer p:hover{
+    color:red;
+}
+
+@media (max-width: 600px){
+    .contenedor_producto{
+        flex-direction: column;
+        align-items: center;
+    }
+    .tarjeta{
+        width: 80%;
+    }
+    .hero{
+        height: 60vh;
+    }
+}
