@@ -1,4 +1,3 @@
-:root{
     --color-primario: aquamarine;
     --color-tarjeta: coral;
     --color-hover: crimson;
@@ -6,32 +5,71 @@
     --color-bordes: black;
     --color-hero: wheat;
     --color-boton: rgb(230, 115, 34);
-    --fuente-titulo: 'Playfair Display', serif;
+    --fuente-titulo: 'Playfair Display', serif; 
     --fuente-normal: 'Lato', sans-serif;
+    --color-contanco: rgb(177, 150, 113);
+    --color-nav:rgb(163, 149, 129);
 
 
 }
 body{
-    background-color: var(--color-fondo);
+    background-color:var(--color-fondo);
     font-family: var(--fuente-normal);
+    padding-top: 75px;
+    
 }
 
 h1,h2,h3{
     font-family: var(--fuente-titulo);
 }
- header{
+nav{
+    background-color: var(--color-nav);
+    border-bottom: 1px solid  rgb(115, 105, 92);
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    top:0;
+    left:0;
+    z-index: 1000;
+    height: 75px;
+}
+nav ul{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    
+}
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius:10px;
+}
+nav ul li a:hover{
+    background-color:rgb(128, 116, 100) ;
+    color:rgb(178, 177, 177);
+}
+nav h2{
+    color: white;
+    padding-left: 20px;
+    
+}
+
+header{
     background-color:var(--color-primario);
     text-align: center;
     padding: 20px;
     border: 2px solid var(--color-bordes);
     border-radius: 10px;
- }
- header h1::before{
+}
+header h1::before{
     content:"🍞"
- }
- header h1::after{
+}
+header h1::after{
     content:" 🍞"
- }
+}
 
 .hero{
     height: 60vh;
@@ -51,6 +89,7 @@ h1,h2,h3{
     position: relative;
     box-shadow: 0px 10px 10px rgb(114, 58, 17);
     transition: all 0.5s ease;
+    text-decoration: none;
 }
 .hero a:hover{
     background-color:rgb(161, 81, 23);
@@ -67,10 +106,10 @@ h1,h2,h3{
     color:white;
 }
 .contenedor_producto{
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
     gap: 20px;
-    justify-content: space-between;
+    
 }
 .tarjeta{
     background-color:var(--color-tarjeta);
@@ -78,7 +117,8 @@ h1,h2,h3{
     padding: 5px 30px;
     border: 2px solid var(--color-bordes);
     border-radius: 10px;
-    width: 30%;
+    width: 100%;
+    box-sizing: border-box;
     position: relative;
     transition: all 0.3s ease;
     box-shadow: 0px 5px 10px rgb(78, 167, 136);
@@ -87,6 +127,9 @@ h1,h2,h3{
     background-color:var(--color-hover);
     top: -5px;
     box-shadow: 0px 10px 20px rgb(78, 167, 136);
+}
+.tarjeta-destacada{
+    grid-column:1/3;
 }
 .nosotros{
     background-color:aqua;
@@ -101,8 +144,40 @@ h1,h2,h3{
  }
  .nosotros h2::after{
     content:"👨‍💼 ";
- }
+}
 
+#contacto{
+    background-color: var(--color-contanco);
+    border: 2px solid var(--color-bordes);
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 20px;
+}
+#contacto h2{
+    padding: 20px;
+    border-bottom: 2px solid var(--color-bordes);
+}
+#contacto h2::after{
+    content:" 📞";
+}
+
+.contenedor_contacto{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+.contacto{
+    background-color: white;
+    text-align:center;
+    padding: 10px;
+    border: 2px solid var(--color-bordes);
+    border-radius: 10px;
+    box-shadow: 0px 10px 10px rgb(115, 98, 74);
+}
+
+.ubicacion p::after{
+    content:" 🗺️";
+}
 
 footer{
     margin-top: 20px;
@@ -121,15 +196,32 @@ footer p:hover{
     color:red;
 }
 
+
 @media (max-width: 600px){
-    .contenedor_producto{
+
+    nav{
         flex-direction: column;
+        height: 120px;
+        justify-content: center;
+    }
+    body{
+        padding-top: 120px;
+    }
+    .contenedor_producto{
+        grid-template-columns: 1fr;
         align-items: center;
     }
+    .tarjeta-destacada{
+        grid-column:1/2;
+    }
+    
     .tarjeta{
         width: 80%;
     }
     .hero{
         height: 60vh;
+    }
+    .contenedor_contacto{
+        grid-template-columns:1fr;
     }
 }
