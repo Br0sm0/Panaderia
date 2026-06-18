@@ -11,7 +11,10 @@
 <body>
     <nav>
         <h2>Panaderia, Pan y Sabor</h2>
-        <ul>
+        <button id="btn-menu" class="hamburguesa">
+            ☰
+        </button>
+        <ul id="menu" class="menu">
             <li><a href="#productos">Productos</a></li>
             <li><a href="#nosotros">Nosotros</a></li>
             <li><a href="#contacto">Contacto</a></li>
@@ -20,6 +23,8 @@
     <header>
         <h1> Panaderia, pan y sabor</h1>
         <p>Los mejores postres y  pan al alcase de un clic</p>
+        <p id="saludo"></p>
+
     </header>
     
     <section class="hero">
@@ -56,6 +61,25 @@
         </div>
     </section>
 
+    <section class="pedido_rapido" id="pedido">
+        <h2>Ordene lo que desea sin hacer filas</h2>
+        <div class="entrada">
+            <input type="text" id="nombre" placeholder="Ingresa tu nombre porfavor">
+            <select id="menu-pedido" class="menu-pedido">
+                <option>Mojicon</option>
+                <option>Mogolla</option>
+                <option>Pan franaces</option>
+                <option>Mogolla chicharrona</option>
+                <option>Pan blandito</option>
+                <option>Pan con queso</option>
+            </select>
+            <button id="btn-pedido" class="btn-pedido">
+                Confirmar pedido
+            </button>
+        </div>
+        <p id="respuesta" class="repsuesta"></p>
+    </section>
+
     <section class="nosotros" id="nosotros">
         <h2>Sobre nosotros</h2>
         <p>En Panadería, Pan y Sabor nos dedicamos a elaborar productos frescos y de alta calidad todos los días. Combinamos ingredientes seleccionados, recetas tradicionales y pasión por la panadería para ofrecer panes, tortas y postres que acompañan los mejores momentos de nuestros clientes. Nuestro compromiso es brindar sabor, frescura y una atención cercana que haga de cada visita una experiencia especial.</p>
@@ -86,6 +110,6 @@
         <p> <strong>© 2026 Todos los derechos reservados </strong></p>
     </footer>
 
-    
+    <script src="script.js"></script>
 </body>
 </html>
